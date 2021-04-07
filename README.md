@@ -1,37 +1,42 @@
-Introdução
-Este Github faz parte do trabalho final do curso BI MASTER Turma 2019.03 do aluno Claudio Bridi, orientado pelo Prof. Leonardo Mendonza.
+# Detecção de Anomalias nos Dados de Emissões de Gases de Efeito Estufa de uma UEP (Unidade Estacionária de Produção de Óleo e Gás)
 
-Objetivo:
-Criar um algoritmo para detectar anomalias em série temporal de emissões mensais de CO2-equivalente das fontes de uma UEP (Unidade Estacionária de Produção de Óleo e Gás), no período de 2015 a 2019.
+#### Aluno: [Cláudio Orlando Bridi](https://github.com/cobridi).
+#### Orientador: [Leonardo Forero Mendonza](https://github.com/leofome8).
 
-Material
-Google Colaboratory
-Planilha de dados brutos contendo "nome da instalação", "tipo de fonte", "código da fonte", "Ano", "Mês", "CO2 emitido", em formatos csv e excel
-Git Hub
-Arquivo com código em python da disciplina CONF: deteçãodeanomaliasemseries.ipynb
-Aplicabilidade:
+---
+
+Trabalho apresentado ao curso [BI MASTER](https://ica.puc-rio.ai/bi-master) como pré-requisito para conclusão de curso e obtenção de crédito na disciplina "Projetos de Sistemas Inteligentes de Apoio à Decisão".
+
+- [Link para o código](deteção_anomalia_emissoes.ipynb).
+
+---
+
+### Resumo
+
+Este trabalho implementou modelos estatísticos de processos, modelos autorregressivos e modelo CUSUM para detecção de anomalias em séries temporais de emissões de gases de efeito estufa por equipamentos de uma plataforma de petróleo. O mesmo foi elaborado a partir das seguintes etapas:
+- Carregar, preparar e analisar dados
+- Pré-Processar os dados
+- Controle estatístico do processo (CEP) para detectar anomalias
+- Modelos autorregressivos
+- Avaliação dos modelos
+- Conclusão final
+    
+#### Aplicabilidade:
+
 Este algoritmo poderá ser utilizado na industria de óleo e gás, mais especificamente, e também para empresas que precisem registrar, inventariar, divulgar e trabalhar com dados de emissões de gases de efeito estufa. Para detecção e correção das anomalias em dados, na maioria das vezes inseridos manualmente em sistema ou planilha específica, também costumamente são verificados no olho por algum profissional todos o anos, antes de comporem as informações do inventário e relatório de emissões, divulgado tanto internamente quanto para stakeholders externos. Isto é, por serem muitos dados e de muitas fontes, anomalias podem passar despercebidas, prejudicando a análise de dados, atendimento de compromissos assumidos e perda de credibilidade.
 
-Orientação:
-Esta ideia surgiu na disciplina de Confiabilidade quando estudamos a detecção de anomalias em séries temporais de dados de precipitação em NY. Pensei em como ponto de partida utilizar o mesmo algorítimo e avançar a partir de então. #
+#### Resultados:
 
-Prazo:
-Finalizado no GitHub até 30/12/2020.
+O modelo detectou as duas anomalias inseridas bem como um outro registro (2017-07-01). O resultado reflete a diferença nos algoritmos de CUSUM e Tabela de Controle. A tabela de controle está procurando pontos únicos e anômalos. CUSUM é sensível a alterações no comportamento dos dados. Como resultado, sinaliza pontos como anômalos até que o comportamento da série temporal retorne ao normal. De fato, CUSUM é usado para detecção de pontos de mudança: encontrar quando a distribuição subjacente da série temporal mudou.
 
-Detecção de anomalias em Séries Temporais de Emissões de Gases de Efeito Estufa por equipamentos de uma plataforma de petróleo
+#### Conclusão:
 
-Planejamento por etapas:
+Os modelos estudados (controle estatístico de processos, modelos autorregressivos e modelo CUSUM) detectaram possíveis anomalias bem como as anomalias implantadas para verificação, com melhor detecção pelo CUSUM. É possível utilizá-los para esta aplicação proposta, no entanto devemos trabalhar com o modelo para cada fonte de emissão e não para a Unidade Estacionária de Produção como um todo.
 
-Carregar, preparar e analisar dados
+---
 
-Pré-Processar os dados
+Matrícula: 192.190.107
 
-Controle estatístico do processo (CEP) para detectar anomalias*
+Pontifícia Universidade Católica do Rio de Janeiro
 
-CUSUM
-
-Modelos Autorregressivos
-
-Avaliação dos modelos
-
-Conclusão Final
+Curso de Pós Graduação *Business Intelligence Master*
